@@ -26,20 +26,23 @@
         <div class="col-md col-xl-4">
           <!-- Add project form and instructions -->
           <div class="card mb-3">
-            <h2 class="h4 card-header custom-card-header">Search for a City</h2>
+            <h2 class="h4 card-header">Search for a City</h2>
             <div class="card-body">
               <input class="form-control" id="InputCity" placeholder="City">  
             </div>
-            <button type="button" type="text" class="btn btn-primary btn-md">Block level button</button>
+            <button type="button" type="text" class="btn btn-primary btn-md">Search</button>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Project Name</li>
+              <!-- <li class="list-group-item">Project</li> -->
             </ul>
           </div>
         </div>
 
         <div class="col-md col-xl-8">
           <section class="city-box">
-            <h3 id ="temp-city-box">City with X date</h3>
+            <div class = "title">
+              <h3 id ="title-city-box">City with X date</h3>
+              <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+            </div>
             <p id ="temp-city-box">Temperature</p>
             <p id ="wind-city-box">Wind</p>
             <p id ="humidity-city-box">Humidity</p>

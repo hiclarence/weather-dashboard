@@ -40,8 +40,13 @@ h6 {
 
 .city-box {
   border: 1px solid black; 
-  height: 150px; 
+  height: 170px; 
   padding: 5px
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
 }
 
 .col {
