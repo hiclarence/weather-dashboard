@@ -7,11 +7,7 @@
     --lightyellow: #fff5d1;
   }
   
-  /* Apply custom Google font */
-body {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 400;
-}
+  
   
 h1,
 h2,
@@ -29,6 +25,10 @@ h6 {
 .btn-custom {
     background-color: var(--darkblue);
     color: var(--light);
+}
+
+h4 {
+  padding-top: 10px; 
 }
 
 .header {
@@ -51,8 +51,19 @@ h6 {
 
 .col {
   background: rgb(27, 21, 73); 
-  height: 50px; 
+  height: 250px; 
   margin: 10px; 
+  color: white;
+}
+
+.col p {
+  margin-top: 5px;
+  padding-top: 5px;
+  font-weight: 200;
+}
+
+#timeStamp {
+  font-weight: 400;
 }
 
 .button {

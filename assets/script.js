@@ -1,21 +1,4 @@
-async function getWeather() {
-    // get intake form
-    // input into URL
-    
-    let requestedURL = 'https://api.openweathermap.org/data/2.5/weather?lat=39.8865&lon=-83.4483&appid=6d5b483be1e33702dfcdcba9ef8ea047'
-    let results = await fetch(requestedURL); 
-    let data = await results.json();
-    
-    let temp = 1.8*(data.main.temp - 273) + 32; 
-    let windSpeed = data.wind.speed; 
-    let humidity = data.main.humidity; 
-}
-
-
-
 function getInput() {
-
-    // console.log(userInput);
     $("button").click(async function () {
         let userInput  = document.querySelector('input').value;
         let geoURL = 'http://api.openweathermap.org/geo/1.0/direct?q='.concat(userInput, '&appid=6d5b483be1e33702dfcdcba9ef8ea047');
@@ -64,8 +47,31 @@ async function forecastWeather(lat, lon) {
             noonArray.push(forecastData.list[i]);
         }
     };
+
     console.log(noonArray);
-    // console.log(dayjs(forecastData.list[i].dt*1000).format('MM/DD/YYYY'));
+
+    for (var i=0; i<noonArray.length; i++) {
+        $('#forecast').append(`<div class="col" id=card-` + [i] + `></div>`);    
+
+        let timeStamp = dayjs(noonArray[i].dt*1000).format('MM/DD/YYYY');
+        
+        let icon = noonArray[i].weather[0].icon; 
+        let iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+        
+        let temp = 1.8*(noonArray[i].main.temp - 273) + 32; 
+
+        let windSpeed = noonArray[i].wind.speed; 
+        
+        let humidity = noonArray[i].main.humidity; 
+
+        $(`#card-`+[i]).append(`<p class=timeStamp>`+ timeStamp + `</p>`);
+        $(`#card-`+[i]).append(`<img id="wicon" src="` + iconurl + `" alt="Weather icon"></img>`);
+        $(`#card-`+[i]).append(`<p>Temperature: ` + temp.toFixed(2) + `\u00B0F` + `</p>`);
+        $(`#card-`+[i]).append(`<p>Wind: ` + windSpeed.toFixed(2) + ` MPH` + `</p>`);
+        $(`#card-`+[i]).append(`<p>Humidity: ` + humidity.toFixed(2) + ` %` + `</p>`);
+
+    }
+    
 }
 
 getInput();
