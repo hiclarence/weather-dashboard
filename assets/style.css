@@ -69,4 +69,7 @@ h4 {
 .button {
   margin: 20px 10px; 
 }
-  
+
+.btn-secondary {
+  margin-top: 10px;
+}
