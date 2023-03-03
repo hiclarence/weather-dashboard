@@ -1,22 +1,11 @@
 # weather-dashboard
 
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
+##Description
+The purpose of this class homework was to implement a real time weather dashboard. Users would come in and enter in a city to see the current weather forcast of temperature, humidity, and windspeed. The five day forecast for said city will also be displayed.  Previous entries will be saved through Local Storage and be displayed as an inactive button underneath the Search icon. 
 
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
+##Technologies
+HTML, CSS, Vanilla JavaScript, OpenWeather API, DayJS API
 
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, 
-and the the wind speed
+![Image](img.png)
 
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-
-https://openweathermap.org/forecast5
-
+[Link](https://hiclarence.github.io/weather-dashboard/)

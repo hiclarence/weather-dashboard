@@ -1,5 +1,6 @@
 
 let inputList = []
+let cityList = []
 
 if (localStorage.getItem('cityList')) {
     let cityList =  localStorage.getItem('cityList').split(",");    
@@ -9,9 +10,7 @@ if (localStorage.getItem('cityList')) {
     $('.btn-secondary').click(buttonInput)
 }
 
-
 async function getInput() {
-    try {
     let userInput  = document.querySelector('input').value;
     let geoURL = 'http://api.openweathermap.org/geo/1.0/direct?q='.concat(userInput, '&appid=6d5b483be1e33702dfcdcba9ef8ea047');
     let results = await fetch(geoURL); 
@@ -31,11 +30,10 @@ async function getInput() {
     }
 
     $('.btn-secondary').click(buttonInput)
-    } 
     
-    catch (e) {
-        alert('Input a proper city!')
-    }
+    // catch (e) {
+    //     alert('Input a proper city!')
+    // }
     
 }
 
